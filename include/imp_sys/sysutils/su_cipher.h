@@ -96,6 +96,22 @@ typedef struct IN_UNF_CIPHER_CTRL_S
 int SU_CIPHER_Init(void);
 
 /**
+ * @fn int SU_CIPHER_DES_Init(void)
+ *
+ * DES模块打开接口.
+ *
+ * @param	无.
+ *
+ * @retval 0 成功.
+ * @retval 非0 失败.
+ *
+ * @remarks 无.
+ *
+ * @attention 无.
+ */
+int SU_CIPHER_DES_Init(void);
+
+/**
  * @fn int SU_CIPHER_Exit(void)
  *
  * 加密模块关闭接口.
@@ -110,6 +126,38 @@ int SU_CIPHER_Init(void);
  * @attention 无.
  */
 int SU_CIPHER_Exit(void);
+
+/**
+ * @fn int SU_CIPHER_DES_Exit(void)
+ *
+ * DES模块关闭接口.
+ *
+ * @param	无.
+ *
+ * @retval 0 成功.
+ * @retval 非0 失败.
+ *
+ * @remarks 无.
+ *
+ * @attention 无.
+ */
+int SU_CIPHER_DES_Exit(void);
+
+/**
+ * @fn int SU_CIPHER_DES_Test(void)
+ *
+ * 调用DES模块接口测试.
+ *
+ * @param	None.
+ *
+ * @retval 0 Success.
+ * @retval Non-0 Failure.
+ *
+ * @remarks None.
+ *
+ * @attention None.
+ */
+int SU_CIPHER_DES_Test(void);
 
 /**
  * @fn int SU_CIPHER_CreateHandle(void)

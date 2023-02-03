@@ -1,35 +1,18 @@
-T20L RTSP Server
+T31X RTSP Server
 ==================
 
 This project originally came from <https://github.com/beihuijie/carrier-rtsp-server>.
+Then geekman modified it for T20L at <https://github.com/geekman/t20-rtspd>
 
 It's a very spartan RTSP server, using the live555 library for RTSP implementation,
 and a FIFO file descriptor to feed the H.264 frames from the SDK example.
 It's not robust, but it works.
 
-This repo differs by making it work with lower memory devices using the T20L variant,
-like the Xiaofang 1S. I have reverse-engineered the 1S binary in the firmware, 
-and found undocumented SDK calls to increase the pool sizes in order to allow
-the SDK to function under low memory.
-
-The IR LEDs are now also software-controlled via PWM channel 0.
-The settings were also reversed from the 1S binary, and should work with the 
-WyzeCam v2 since they also got rid of the CdS photoresistor.
-
-Also, you can find more technical information from the original 
-[Dafang Hacks project](https://github.com/EliasKotlyar/Xiaomi-Dafang-Hacks).
-
 Compilation
 ============
 
-1. Download the T20 toolchain, either from [the Dafang-Hacks GitHub repo](https://github.com/Dafang-Hacks/Ingenic-T10_20/tree/master/resource/toolchain) or the [Tuya GitHub repo](https://github.com/TuyaInc/TUYA_IPC_SDK/tree/master/mips-linux-4.7.2_64Bit).
-
-2. Set up the `PATH` environment variable to add the toolchain directory.
-
-2. Clone this repo
-
-3. Run the `make` command.
-   You should end up with the `t20-rtspd` binary in the directory.
+This project is typically built as part of wyrecam.  See
+<https://github.com/radredgreen/wyrecam>
 
 License
 ========
@@ -40,6 +23,7 @@ However, the newer changes made by me are licensed under **the 3-clause
 ("modified") BSD License**, where applicable.
 
 Copyright (C) 2019 Darell Tan
+Copyright (C) 2023 Radredgreen
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions

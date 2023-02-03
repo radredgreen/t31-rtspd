@@ -18,12 +18,12 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 // - various kinds of file on demand, using a built-in RTSP server.
 // main program
 
-#include "liveMedia.hh"
-#include "BasicUsageEnvironment.hh"
+#include <liveMedia.hh>
+#include <BasicUsageEnvironment.hh>
 #include <sys/types.h>  
 #include <sys/stat.h>
 #include <fcntl.h>
- 
+
 #include "capture_and_encoding.h"
 #include "version.h"
 
@@ -96,6 +96,7 @@ int main(int argc, char** argv) {
 			  *env << "Failed open fifo\n";
 			  exit(1);; 
 		}   
+		
 		while (1) {
 			  if (get_stream(fd ,0) < 0) break; //基于君正提供的API实现采集和编码，并将编码后的数据保存到fifo中。
 		}
@@ -124,7 +125,7 @@ int main(int argc, char** argv) {
 		  = ServerMediaSession::createNew(*env, streamName, streamName,
 					      descriptionString);
 		sms->addSubsession(H264VideoFileServerMediaSubsession
-			       ::createNew(*env, inputFileName, reuseFirstSource));
+			       ::createNew(*env,  inputFileName, reuseFirstSource));
 		rtspServer->addServerMediaSession(sms);
 
 		announceStream(rtspServer, sms, streamName, inputFileName);
